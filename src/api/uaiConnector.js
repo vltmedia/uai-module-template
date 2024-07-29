@@ -16,10 +16,14 @@ const load = () => {
     window.setBrowserImagesPath = setBrowserImagesPath;
     window.setBrowserAudioPath = setBrowserAudioPath;
     window.emit = emit;
+    window.sendToast = sendToast;
     
     console.log("loaded uaiConnector");
 };
 
+let sendToast = (message) => {
+    alert(message);
+};
 const emit = (type, args) => {
 
     emitObject(type, args);
