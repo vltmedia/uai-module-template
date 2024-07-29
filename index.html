@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML Page</title>
+    <script src="./src/api/uaiConnector.js" type="module">
+    </script>
+    <script src="./dist/CustomModule.plugin.js" type="module"></script>
+    <script >
+        async function Click () {
+            console.log('Button clicked');
+            const response = await window.CustomModule.operation("fma_brotherhood" );
+            document.getElementById("output-text").innerText = response[0].text;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <button id="btn" onclick="Click()" >Click me</button>
+    <div id="output" class="flex">
+        <p>Output: </p>
+        <p id="output-text"></p>
+    </div>
+    
+</body>
+</html>
